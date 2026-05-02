@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green-light: #F0FDF4;
+  --color-brand-green: #22C55E;
+  --color-brand-orange: #F97316;
+  --color-brand-dark: #1E293B;
+  --color-brand-gray: #F8FAFC;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-gray text-brand-dark font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 border border-slate-100;
+  }
+  
+  .btn-primary {
+    @apply w-full bg-brand-green text-white font-bold py-4 px-4 rounded-2xl shadow-[0_8px_20px_rgb(34,197,94,0.25)] hover:bg-[#16A34A] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgb(34,197,94,0.3)] transition-all duration-300 active:scale-[0.98] active:translate-y-0;
+  }
+  
+  .btn-secondary {
+    @apply w-full bg-brand-green-light text-brand-green font-bold py-4 px-4 rounded-2xl hover:bg-[#DCFCE7] transition-colors active:scale-[0.98];
+  }
+}
+
+/* Custom scrollbar for horizontal lists */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
