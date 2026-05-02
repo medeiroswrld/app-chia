@@ -12,7 +12,7 @@ export default function BottomNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-[72px] bg-white/80 backdrop-blur-xl border-t border-slate-100/50 z-50 px-2 pb-safe shadow-[0_-10px_40px_rgb(0,0,0,0.03)]">
+    <nav className="fixed bottom-0 left-0 right-0 h-[72px] bg-surface/90 backdrop-blur-xl border-t border-border-subtle z-50 px-2 pb-safe shadow-[0_-10px_40px_rgb(0,0,0,0.03)]">
       <div className="h-full flex items-center justify-around max-w-md mx-auto relative">
         {navItems.map((item) => (
           <NavLink
@@ -21,7 +21,7 @@ export default function BottomNav() {
             end={item.to === '/app'}
             className={({ isActive }) =>
               `flex flex-col items-center justify-center w-full h-full space-y-1.5 transition-all duration-300 relative ${
-                isActive ? 'text-brand-green translate-y-[-2px]' : 'text-slate-400 hover:text-slate-600'
+                isActive ? 'text-brand-primary translate-y-[-2px]' : 'text-text-muted hover:text-text-main'
               }`
             }
           >
@@ -34,7 +34,7 @@ export default function BottomNav() {
                   {item.label}
                 </span>
                 {isActive && (
-                  <div className="absolute -top-3 w-1.5 h-1.5 bg-brand-green rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]"></div>
+                  <div className="absolute -top-3 w-1.5 h-1.5 bg-brand-primary rounded-full shadow-sm"></div>
                 )}
               </>
             )}

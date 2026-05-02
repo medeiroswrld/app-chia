@@ -10,7 +10,7 @@ export default function Layout() {
   }
 
   return (
-    <div className="min-h-screen bg-brand-gray flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col">
       <Header />
       
       <main className="flex-1 w-full max-w-lg mx-auto pt-20 pb-20 px-4">

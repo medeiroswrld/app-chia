@@ -1,31 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-green-light: #F0FDF4;
-  --color-brand-green: #22C55E;
-  --color-brand-orange: #F97316;
-  --color-brand-dark: #1E293B;
-  --color-brand-gray: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-background: #F8FAFC;
+  --color-text-main: #1E293B;
+  --color-text-muted: #64748B;
+  --color-border-subtle: #F1F5F9;
+  
+  --color-brand-primary: #22C55E;
+  --color-brand-primary-light: #F0FDF4;
+  --color-brand-accent: #F97316;
 }
 
 @layer base {
   body {
-    @apply bg-brand-gray text-brand-dark font-sans antialiased;
+    @apply bg-background text-text-main font-sans antialiased;
     -webkit-tap-highlight-color: transparent;
+  }
+  
+  body.theme-dark {
+    --color-surface: #1E293B;
+    --color-background: #0F172A;
+    --color-text-main: #F8FAFC;
+    --color-text-muted: #94A3B8;
+    --color-border-subtle: #334155;
+  }
+  
+  body.theme-pink {
+    --color-brand-primary: #EC4899;
+    --color-brand-primary-light: #FDF2F8;
+    --color-brand-accent: #F43F5E;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 border border-slate-100;
+    @apply bg-surface rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 border border-border-subtle;
   }
   
   .btn-primary {
-    @apply w-full bg-brand-green text-white font-bold py-4 px-4 rounded-2xl shadow-[0_8px_20px_rgb(34,197,94,0.25)] hover:bg-[#16A34A] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgb(34,197,94,0.3)] transition-all duration-300 active:scale-[0.98] active:translate-y-0;
+    @apply w-full bg-brand-primary text-white font-bold py-4 px-4 rounded-2xl shadow-[0_8px_20px_rgb(0,0,0,0.15)] hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgb(0,0,0,0.2)] transition-all duration-300 active:scale-[0.98] active:translate-y-0 opacity-95 hover:opacity-100;
   }
   
   .btn-secondary {
-    @apply w-full bg-brand-green-light text-brand-green font-bold py-4 px-4 rounded-2xl hover:bg-[#DCFCE7] transition-colors active:scale-[0.98];
+    @apply w-full bg-brand-primary-light text-brand-primary font-bold py-4 px-4 rounded-2xl transition-colors active:scale-[0.98] opacity-90 hover:opacity-100;
   }
 }
 
